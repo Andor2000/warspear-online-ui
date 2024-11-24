@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Roboto Slab', serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/portrait-fantasy-wizard-character.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
