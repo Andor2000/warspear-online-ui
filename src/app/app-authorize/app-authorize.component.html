@@ -1,0 +1,38 @@
+<div class="centered-container">
+  <form class="form-container" style="margin-top: 130px" autocomplete="on">
+    <h3>Авторизация</h3>
+
+    <div [ngStyle]="{display: isExist === null ? 'flex' : 'none'}">
+      <input
+        type="text"
+        placeholder="Логин"
+        name="username"
+        [autocomplete]="'username'"
+        [(ngModel)]="login"
+        [ngModelOptions]="{standalone: true}"
+      />
+      <input type="submit" value="Далее" (click)="checkLogin()" />
+    </div>
+
+    <div [ngStyle]="{display: isExist !== null ? 'flex' : 'none'}">
+      <input
+        type="password"
+        placeholder="Введите пароль"
+        name="password"
+        [autocomplete]="isExist ? 'current-password' : 'new-password'"
+        [(ngModel)]="password"
+        [ngModelOptions]="{standalone: true}"
+      />
+      <input
+        [ngStyle]="{display: !isExist ? 'flex' : 'none'}"
+        type="password"
+        placeholder="Повторите пароль"
+        name="password"
+        [autocomplete]="'new-password'"
+        [(ngModel)]="repeatPassword"
+        [ngModelOptions]="{standalone: true}"
+      />
+      <input type="submit" value="Войти" (click)="signIn()" />
+    </div>
+  </form>
+</div>

@@ -10,3 +10,131 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.centered-container {
+  justify-content: center; /* Горизонтальное выравнивание */
+  align-items: center; /* Вертикальное выравнивание */
+}
+
+.form-container {
+  width: 20%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  //margin-left: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  //position: fixed;
+  //top: 20px;
+  //right: 20px;
+  //max-height: 80vh;
+  //overflow-y: auto;
+}
+
+.form-container h3 {
+  text-align: center;
+  color: #333;
+}
+
+.form-container form,
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container input[type='text'],
+.form-container input[type='password'],
+.form-container input[type='number'],
+.form-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.form-container input[type='submit'] {
+  background-color: #ffcc00;
+  color: #333;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.form-container input[type='submit']:hover {
+  background-color: #e6b800;
+}
+
+.toast-message {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 60px;
+  font-family: PTRootUI-Regular;
+  font-size: 16px;
+  word-wrap: break-word;
+  justify-content: center;
+}
+
+.toast-container {
+  position: fixed;
+  right: 10px !important;
+  z-index: 999999 !important;
+}
+
+.toast-container .ngx-toastr {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 15px 15px 15px;
+  width: 300px;
+  border-radius: 7px;
+  border-style: solid;
+  border-width: 2px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  box-shadow: 0 0 12px #cdcdcd;
+  font-weight: 700;
+}
+
+.toast-success .toast-icon:before {
+  color: #50ab87 !important;
+}
+
+.toast-warning .toast-icon:before {
+  color: #fe9800 !important;
+}
+
+.toast-error {
+  border-color: rgba(174, 54, 61, 1) !important;
+  color: rgba(174, 54, 61, 1) !important;
+  background-color: rgba(236, 200, 197, 1) !important;
+}
+
+.toast-info .toast-icon:before {
+  color: #36b5db !important;
+}
+
+.toast-message {
+  min-height: unset;
+  align-items: start;
+}
+
+#toast-container {
+  top: 30px !important;
+}
+
+.msg-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fa-ban {
+  font-size: 30px;
+}

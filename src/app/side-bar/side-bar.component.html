@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <div class="main-links">
+    <!--    <ng-container *ngFor="let item of mainLinks">-->
+    <!--      <div>{{ item.name }}</div>-->
+    <!--    </ng-container>-->
+    <div>Список дропа</div>
+    <div>Список участников</div>
+  </div>
+  <div class="admin-links">
+    <ng-container *ngFor="let item of sideBarService.adminLinks">
+      <div>{{ item.name }}</div>
+    </ng-container>
+    <!--    <div>Войти в аккаунт</div>-->
+    <!--    <div>Выйти</div>-->
+  </div>
+</div>
