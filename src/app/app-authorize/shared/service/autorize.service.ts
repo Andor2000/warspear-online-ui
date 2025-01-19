@@ -4,15 +4,18 @@ import {HttpClient} from '@angular/common/http';
 import {AlertService} from '../../../../shared/service/alert.service';
 import {UserSessionModel} from '../model/user-session.model';
 import {plainToInstance} from 'class-transformer';
+import {BaseService} from '../../../../shared/service/base/base.service';
 
 @Injectable()
-export class AutorizeService {
+export class AutorizeService extends BaseService {
   private url: string = 'https://localhost:44333/api/user/authorize';
 
   constructor(
-    private httpClient: HttpClient,
+    protected override httpClient: HttpClient,
     private alertService: AlertService,
-  ) {}
+  ) {
+    super(httpClient);
+  }
 
   /**
    * Проверка существования логина.

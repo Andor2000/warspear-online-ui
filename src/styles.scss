@@ -84,7 +84,7 @@ div {
 .toast-container {
   position: fixed;
   right: 10px !important;
-  z-index: 999999 !important;
+  //z-index: 999999 !important;
 }
 
 .toast-container .ngx-toastr {
@@ -137,4 +137,30 @@ div {
 
 .fa-ban {
   font-size: 30px;
+}
+
+.mat-mdc-form-field-infix {
+  width: 100% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mat-mdc-select-trigger {
+  align-items: flex-end !important;
+}
+
+.mat-mdc-select-panel {
+  background-color: #ffffff !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  height: 50px !important;
+}
+
+.mat-mdc-select-min-line {
+  position: fixed;
+}
+
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+  top: calc(var(--mat-form-field-container-height, 40px) / 2) !important;
 }

@@ -2,12 +2,13 @@ import {minDate} from '../../../../shared/function/date.function';
 import {ObjectModel} from './object.model';
 import {BaseModel} from '../../../../shared/model/base/base.model';
 import {GroupModel} from './group.model';
-import {CodeNameBaseModel} from '../../../../shared/model/base/code-name-base.model';
+import {Type} from 'class-transformer';
 
 export class DropModel extends BaseModel {
   /**
    * Дата дропа.
    */
+  @Type(() => Date)
   public date: Date = minDate();
 
   /**
@@ -28,20 +29,12 @@ export class DropModel extends BaseModel {
   /**
    * Объект.
    */
+  @Type(() => ObjectModel)
   public Object: ObjectModel = new ObjectModel();
 
   /**
    * Группа.
    */
+  @Type(() => GroupModel)
   public group: GroupModel = new GroupModel();
-
-  /**
-   * Сервер.
-   */
-  public server: CodeNameBaseModel = new CodeNameBaseModel();
-
-  /**
-   * Фракция.
-   */
-  public fraction: CodeNameBaseModel = new CodeNameBaseModel();
 }

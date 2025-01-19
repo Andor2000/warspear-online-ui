@@ -1,5 +1,46 @@
-Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа
-Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа
-Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа
-Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа Журнал дропа
-Журнал дропа Журнал дропа
+<div class="centered-container">
+  <div class="form-container" style="width: 60%; margin-top: 60px">
+    <mat-form-field>
+      <mat-label>Сервер</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let server of servers" [value]="server.name">
+          {{ server.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="centered-container">
+  <div class="form-container" style="width: 60%; margin-top: 80px">
+    <table>
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th>Дата</th>
+          <th>Цена</th>
+          <th>Количество игроков</th>
+          <th>Доля</th>
+          <th>Группа</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Улучшенный критический урон</td>
+          <td>16.01.2025</td>
+          <td>1990 руб</td>
+          <td>25</td>
+          <td>3</td>
+          <td>Учебник</td>
+        </tr>
+        <tr>
+          <td>Тактика ближнего боя</td>
+          <td>05.01.2025</td>
+          <td>2590 руб</td>
+          <td>13</td>
+          <td>2</td>
+          <td>Учебник</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
