@@ -2,16 +2,30 @@
   <div class="form-container" style="width: 60%; margin-top: 60px">
     <mat-form-field>
       <mat-label>Сервер</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let server of servers" [value]="server.name">
+      <mat-select [(ngModel)]="serverFilter">
+        <mat-option *ngFor="let server of servers" [value]="server">
           {{ server.name }}
         </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
+
+  <div class="form-container" style="width: 60%; margin-top: 10px">
+    <mat-form-field>
+      <mat-label>Фракция</mat-label>
+      <mat-select [(ngModel)]="fractionFilter">
+        <mat-option *ngFor="let fraction of fractions" [value]="fraction">
+          {{ fraction.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <button [disabled]="!serverFilter?.id || !fractionFilter?.id" (click)="search()">Поиск</button>
 </div>
-<div class="centered-container">
-  <div class="form-container" style="width: 60%; margin-top: 80px">
+
+<div *ngIf="count" class="centered-container">
+  <div class="form-container" style="width: 60%; margin-top: 60px">
     <table>
       <thead>
         <tr>
@@ -24,21 +38,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Улучшенный критический урон</td>
-          <td>16.01.2025</td>
-          <td>1990 руб</td>
-          <td>25</td>
-          <td>3</td>
-          <td>Учебник</td>
-        </tr>
-        <tr>
-          <td>Тактика ближнего боя</td>
-          <td>05.01.2025</td>
-          <td>2590 руб</td>
-          <td>13</td>
-          <td>2</td>
-          <td>Учебник</td>
+        <tr *ngFor="let item of dropJournal">
+          <td>{{ item.object.name }}</td>
+          <td>{{ item.date | date: 'dd MM yyyy' }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.playersCount }}</td>
+          <td>{{ item.part }}</td>
+          <td>{{ item.group.name }}</td>
         </tr>
       </tbody>
     </table>

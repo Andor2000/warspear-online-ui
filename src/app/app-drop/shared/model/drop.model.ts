@@ -3,6 +3,7 @@ import {ObjectModel} from './object.model';
 import {BaseModel} from '../../../../shared/model/base/base.model';
 import {GroupModel} from './group.model';
 import {Type} from 'class-transformer';
+import {CodeNameBaseModel} from '../../../../shared/model/base/code-name-base.model';
 
 export class DropModel extends BaseModel {
   /**
@@ -30,11 +31,17 @@ export class DropModel extends BaseModel {
    * Объект.
    */
   @Type(() => ObjectModel)
-  public Object: ObjectModel = new ObjectModel();
+  public object: ObjectModel = new ObjectModel();
 
   /**
    * Группа.
    */
   @Type(() => GroupModel)
   public group: GroupModel = new GroupModel();
+
+  /**
+   * Статус.
+   */
+  @Type(() => CodeNameBaseModel)
+  public status: CodeNameBaseModel = new CodeNameBaseModel();
 }
