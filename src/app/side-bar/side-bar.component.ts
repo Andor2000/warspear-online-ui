@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SideBarItemModel} from './shared/model/side-bar-item.model';
 import {SideBarService} from './shared/service/side-bar.service';
 
 @Component({

@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+///* You can add global styles to this file, and also import other style files */
 body {
   font-family: 'Roboto Slab', serif;
   color: #333;
@@ -9,6 +9,18 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* Отключаем общий скролл */
 }
 
 .centered-container {
@@ -37,9 +49,9 @@ body {
 
 .form-container form,
 div {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  //display: flex;
+  //flex-direction: column;
+  //gap: 15px;
 }
 
 .form-container input[type='text'],
@@ -50,6 +62,8 @@ div {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1em;
+  width: 100%;
+  margin: 5px 0;
 }
 
 .form-container input[type='submit'] {
@@ -62,6 +76,8 @@ div {
   font-size: 1em;
   font-weight: bold;
   transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 5px;
 }
 
 .form-container input[type='submit']:hover {
