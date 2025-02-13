@@ -20,7 +20,7 @@ export class AppDropComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private dropService: DropService,
-    private dropPlayerService: DropPlayerService,
+    private dropPlayerService: DropPlayerService
   ) {
     this.dropId = +(this.activatedRoute.snapshot.paramMap.get('id') ?? 0);
   }

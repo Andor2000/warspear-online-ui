@@ -5,7 +5,7 @@ import {AdminComponent} from './admin/admin.component';
 import {DropJournalComponent} from './drop-journal/drop-journal.component';
 
 export const routes: Routes = [
-  {path: 'drop', component: AppDropComponent},
+  {path: 'drop/:id', component: AppDropComponent},
   {path: 'drop-journal', component: DropJournalComponent},
   {path: 'auth', component: AppAuthorizeComponent},
   {path: 'admin', component: AdminComponent},

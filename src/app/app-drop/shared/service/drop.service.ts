@@ -11,17 +11,17 @@ export class DropService {
   /**
    * Получение информации о дропе.
    */
-  public async getDrop(): Promise<DropModel | null> {
+  public async getDrop(dropId: number): Promise<DropModel> {
     try {
       return await firstValueFrom(
         this.httpClient
-          .get<DropModel>('https://localhost:44333/')
+          .get<DropModel>('https://localhost:44333/api/Drop/' + dropId)
           .pipe(map((res: DropModel) => plainToInstance(DropModel, res))),
       );
     } catch (error) {
       console.error(error);
       alert(error);
-      return null;
+      return new DropModel();
     }
   }
 }
