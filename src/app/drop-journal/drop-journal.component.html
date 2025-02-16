@@ -1,6 +1,6 @@
 <div class="centered-container">
   <div class="form-container" style="width: 60%; margin-top: 60px">
-    <mat-form-field>
+    <mat-form-field style="width: 100%">
       <mat-label>Сервер</mat-label>
       <mat-select [(ngModel)]="serverFilter">
         <mat-option *ngFor="let server of servers" [value]="server">
@@ -11,7 +11,7 @@
   </div>
 
   <div class="form-container" style="width: 60%; margin-top: 10px">
-    <mat-form-field>
+    <mat-form-field style="width: 100%">
       <mat-label>Фракция</mat-label>
       <mat-select [(ngModel)]="fractionFilter">
         <mat-option *ngFor="let fraction of fractions" [value]="fraction">

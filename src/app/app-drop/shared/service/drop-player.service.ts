@@ -20,8 +20,23 @@ export class DropPlayerService {
       );
     } catch (error) {
       console.error(error);
-      alert(error);
       return [];
+    }
+  }
+
+  /**
+   * Добавить игрока в список дропа.
+   */
+  public async addPlayer(dropPlayer: DropPlayerModel): Promise<DropPlayerModel> {
+    try {
+      return await firstValueFrom(
+        this.httpClient
+          .post<DropPlayerModel>('https://localhost:44333/api/DropPlayer/', dropPlayer)
+          .pipe(map((res: DropPlayerModel) => plainToInstance(DropPlayerModel, res))),
+      );
+    } catch (error) {
+      console.error(error);
+      return new DropPlayerModel();
     }
   }
 }

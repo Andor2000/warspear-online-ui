@@ -15,17 +15,16 @@
       <!-- Картинка слева от описания -->
       <img ngSrc="assets/speed.png" alt="Изображение предмета" class="drop-image" width="120" height="120" />
       <div class="info">
-        <h2>{{ drop.object.objectType.name}} "{{ drop.object.name }}"</h2>
+        <h2>{{ drop.object.objectType.name }} "{{ drop.object.name }}"</h2>
         <p><strong>Цена:</strong> {{ drop.price }}</p>
         <p><strong>Участники:</strong> {{ drop.playersCount }}</p>
         <p><strong>Размер доли:</strong> {{ drop.part }}</p>
-        <p><strong>Дата дропа:</strong> {{ drop.date | date : 'dd.MM.yyyy' }}</p>
-
+        <p><strong>Дата дропа:</strong> {{ drop.date | date: 'dd.MM.yyyy' }}</p>
       </div>
     </div>
 
     <div class="participant-list">
-      <h3>Участники</h3>
+      <h3 style="padding-bottom: 10px">Участники</h3>
       <div class="participant-header">
         <span>Ник</span>
         <span>Доли</span>
@@ -34,25 +33,37 @@
       </div>
       <!-- Изначальные данные -->
       <div class="participant" *ngFor="let dropPlayer of dropPlayers">
-        <span>{{dropPlayer.player.nick }}</span>
-        <span>{{dropPlayer.part }}</span>
-        <span>Откудова брать это?</span>
+        <span>{{ dropPlayer.player.nick }}</span>
+        <span>{{ dropPlayer.part }}</span>
+        <span>{{ getSum(dropPlayer) }}</span>
         <span>{{ dropPlayer.isPaid ? 'Выплачено' : 'Не выплачено' }}</span>
       </div>
     </div>
   </div>
   <div class="form-container" style="width: 300px; position: sticky; top: 25px; height: fit-content">
     <h3>Добавить участника</h3>
-    <form>
-      <input type="text" name="nickname" placeholder="Ник игрока" required />
-      <input type="number" name="shares" placeholder="Доли" required />
-      <input type="number" name="amount" placeholder="Сумма" required />
-      <select name="status" required>
-        <option value="received">Выплачено</option>
-        <option value="pending">Ожидание</option>
-      </select>
+    <form [formGroup]="formGroup">
+      <input type="text" formControlName="nick" [placeholder]="'Ник игрока'" [required]="true" />
 
-      <input type="submit" value="Добавить" />
+      <mat-form-field style="width: 100%">
+        <mat-label>Сервер</mat-label>
+        <mat-select formControlName="class">
+          <mat-option *ngFor="let class of classList" [value]="class">
+            {{ class.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <input type="number" formControlName="part" [placeholder]="'Доли'" [required]="true" />
+
+      <mat-checkbox formControlName="isPaid">Выплачено</mat-checkbox>
+
+      <!--      <select name="status" required>-->
+      <!--        <option value="received">Выплачено</option>-->
+      <!--        <option value="pending">Ожидание</option>-->
+      <!--      </select>-->
+
+      <input type="submit" value="Добавить" (click)="addPlayer()" />
     </form>
   </div>
 </div>
